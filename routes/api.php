@@ -17,6 +17,8 @@
 |
 */
 
+Route::post('/location/{order}', 'API\DriverAPIController@changedLocation')->name('location');
+
 Route::prefix('driver')->group(function () {
     Route::post('login', 'API\Driver\UserAPIController@login');
     Route::post('register', 'API\Driver\UserAPIController@register');

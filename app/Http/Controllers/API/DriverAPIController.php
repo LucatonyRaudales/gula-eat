@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\API;
 
-
+use App\Events\ChangedLocation;
 use App\Models\Driver;
 use App\Repositories\DriverRepository;
 use Illuminate\Http\Request;
@@ -68,5 +68,11 @@ class DriverAPIController extends Controller
         }
 
         return $this->sendResponse($driver->toArray(), 'Driver retrieved successfully');
+    }
+    public function changedLocation(Request $request, $order)
+    {
+        broadcast(new ChangedLocation($order, $request->lat, $request->lng));
+
+        return "Order {$order} lat {$request->lat} lng {$request->lng} ";
     }
 }
