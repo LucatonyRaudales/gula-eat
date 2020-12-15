@@ -17,17 +17,21 @@ class ChangedLocation implements ShouldBroadcast
     public $order;
     public $lat;
     public $lng;
+    public $rotation;
+    public $accuracy;
 
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct($order, $lat, $lng)
+    public function __construct($order, $lat, $lng, $rotation, $accuracy)
     {
         $this->order = $order;
         $this->lat = $lat;
         $this->lng =$lng;
+        $this->rotation = $rotation;
+        $this->accuracy = $accuracy;
     }
 
     /**
