@@ -71,8 +71,8 @@ class DriverAPIController extends Controller
     }
     public function changedLocation(Request $request, $order)
     {
-        broadcast(new ChangedLocation($order, $request->lat, $request->lng));
+       broadcast(new ChangedLocation($order, $request->lat, $request->lng, $request->rotation, $request->accuracy));
 
-        return "Order {$order} lat {$request->lat} lng {$request->lng} ";
+       return "Order {$order} lat {$request->lat} lng {$request->lng} rotation {$request->rotation} accuracy {$request->accuracy}";
     }
 }
