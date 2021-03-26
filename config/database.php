@@ -41,11 +41,11 @@ return [
 
         'mysql' => [
             'driver' => 'mysql',
-            'host' => env('DB_HOST', '127.0.0.1'),
+            'host' => env('DB_HOST', '68.183.107.50'),
             'port' => env('DB_PORT', '3306'),
             'database' => env('DB_DATABASE', 'gulaeats_app'),
-            'username' => env('DB_USERNAME', 'gulaeats_appuser'),
-            'password' => env('DB_PASSWORD', 'gula-User19'),
+            'username' => env('DB_USERNAME', 'forge'),
+            'password' => env('DB_PASSWORD', 'B96C1X0CsimrUDZoaGJR'),
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
